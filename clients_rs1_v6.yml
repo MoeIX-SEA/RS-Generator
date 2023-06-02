@@ -1,0 +1,15 @@
+clients:
+- asn: 203472
+  ip: 2a0a:280:f000:3:20:3472:0:1
+  cfg:
+    filtering:
+      irrdb:
+        as_sets:
+        - AS-POEMA
+- asn: 140731
+  ip: 2a0a:280:f000:3:14:0731:0:1
+  cfg:
+    filtering:
+      irrdb:
+        as_sets:
+        - RIPE::AS-TOHUNET
