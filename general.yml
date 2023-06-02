@@ -9,7 +9,6 @@ cfg:
 
   passive: True
 
-  interface: eth1
   gtsm: False
 
   add_path: True
@@ -115,9 +114,6 @@ cfg:
     prefix_not_present_in_as_set:
       std: "65530:6"
       lrg: "rs_as:65530:6"
-    as_path_contains_transit:
-      std: "65530:7"
-      lrg: "rs_as:65530:7"
     do_not_announce_to_peer:
       std: "0:peer_as"
       ext: "rt:0:peer_as"
