@@ -3,12 +3,12 @@ export PYTHONPATH=/root/gitrs/ars
 set -x
 set -e
 
-AF=v6
+AF=$1
 
 cp /root/arouteserver/scripts/__pycache__/.gitignore /root/arouteserver/cache/.gitignore
 
 cd /root/gitrs/ars
-/root/arouteserver/scripts/gen_rs.py 2
+/root/arouteserver/scripts/gen_rs.py 2 $AF
 cp /root/arouteserver/clients_rs2_$AF.yml /root/arouteserver/clients.yml
 scripts/arouteserver bird -o /root/arouteserver/bird_rs2_$AF.conf.out --target-version 2.0.8
 mv /root/arouteserver/bird_rs2_$AF.conf.out /root/arouteserver/bird_rs2_$AF.conf
@@ -16,7 +16,7 @@ cd /root/arouteserver/
 md5sum bird_rs2_$AF.conf > /root/arouteserver/bird_rs2_$AF.conf.md5
 
 cd /root/gitrs/ars
-/root/arouteserver/scripts/gen_rs.py 1
+/root/arouteserver/scripts/gen_rs.py 1 $AF
 cp /root/arouteserver/clients_rs1_$AF.yml /root/arouteserver/clients.yml
 scripts/arouteserver bird -o /root/arouteserver/bird_rs1_$AF.conf.out --target-version 2.0.8
 mv /root/arouteserver/bird_rs1_$AF.conf.out /root/arouteserver/bird_rs1_$AF.conf

@@ -8,7 +8,8 @@ import json
 import time
 from bird_parser import get_bird_session
 
-af = "v6"
+rs_num = sys.argv[1]
+af =  sys.argv[2]
 
 client = yaml.safe_load( open(f"/root/arouteserver/clients_all_{ af }.yml").read())
 yaml.SafeDumper.ignore_aliases = lambda self, data: True
@@ -53,7 +54,7 @@ def getinfo(as_set_all,af):
     return irr_cache[as_set_all]
 
 
-if sys.argv[1] == "2":
+if rs_num == "2":
     for ci in range(len(client["clients"])):
         the_asn = client["clients"][ci]["asn"]
         del  client["clients"][ci]["name"]
@@ -68,7 +69,7 @@ if sys.argv[1] == "2":
         client["clients"][ci]["cfg"]["filtering"]["irrdb"]["as_sets"] = as_sets_new
     client_rs2_txt = yaml.safe_dump(client, sort_keys=False)
     open(f"/root/arouteserver/clients_rs2_{ af }.yml","w").write(client_rs2_txt)
-if sys.argv[1] == "1":
+if rs_num == "1":
     for ci in range(len(client["clients"])):
         the_asn = client["clients"][ci]["asn"]
         del  client["clients"][ci]["name"]

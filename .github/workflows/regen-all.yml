@@ -105,7 +105,8 @@ jobs:
     - name: regenerate bird config
       run: |
         pip3 install -r /root/gitrs/ars/requirements.txt
-        /root/arouteserver/scripts/gen_rs.sh
+        /root/arouteserver/scripts/gen_rs.sh v6
+        /root/arouteserver/scripts/gen_rs.sh v4
       env:
         SECRET_PEERINGDB_API_KEY: ${{secrets.SECRET_PEERINGDB_API_KEY}}
         HOME: /root
