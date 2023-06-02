@@ -106,8 +106,7 @@ jobs:
     - name: regenerate bird config
       run: |
         pip3 install -r /root/gitrs/ars/requirements.txt
-        /root/arouteserver/scripts/gen_rs.sh v6
-        /root/arouteserver/scripts/gen_rs.sh v4
+        /root/arouteserver/scripts/gen_rs.sh
       env:
         SECRET_PEERINGDB_API_KEY: ${{secrets.SECRET_PEERINGDB_API_KEY}}
         HOME: /root
@@ -124,7 +123,7 @@ jobs:
       env:
         HOME: /root
         RIPE_PASSWD: ${{secrets.RIPE_PASSWD}}
-        GIT_SSH_COMMAND: "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /root/.ssh/id_rsa_ixpage"
+        #GIT_SSH_COMMAND: "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /root/.ssh/id_rsa_ixpage"
       shell: bash
     - name: Commit
       run: |

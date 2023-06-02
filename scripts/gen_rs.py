@@ -9,9 +9,8 @@ import time
 from bird_parser import get_bird_session
 
 rs_num = sys.argv[1]
-af =  sys.argv[2]
 
-client = yaml.safe_load( open(f"/root/arouteserver/clients_all_{ af }.yml").read())
+client = yaml.safe_load( open(f"/root/arouteserver/clients_all.yml").read())
 yaml.SafeDumper.ignore_aliases = lambda self, data: True
 
 t1_asns = [ 701, 1239, 1299, 2914, 3257, 3320, 3356, 3491, 5511, 6453, 6461, 6762, 6830, 7018, 12956, 174, 1273, 2828, 4134, 4809, 4637, 6939, 7473, 7922, 9002 ]
@@ -68,7 +67,7 @@ if rs_num == "2":
                     print("Warning:",as_set ,"contains t1_asns:",as_set_info["t1_asns"])
         client["clients"][ci]["cfg"]["filtering"]["irrdb"]["as_sets"] = as_sets_new
     client_rs2_txt = yaml.safe_dump(client, sort_keys=False)
-    open(f"/root/arouteserver/clients_rs2_{ af }.yml","w").write(client_rs2_txt)
+    open(f"/root/arouteserver/clients_rs2.yml","w").write(client_rs2_txt)
 if rs_num == "1":
     for ci in range(len(client["clients"])):
         the_asn = client["clients"][ci]["asn"]
@@ -88,5 +87,5 @@ if rs_num == "1":
         client["clients"][ci]["cfg"]["filtering"].pop("max_prefix",None)
         my_as_sets = client["clients"][ci]["cfg"]["filtering"]["irrdb"]["as_sets"]
     client_rs1_txt = yaml.safe_dump(client, sort_keys=False)
-    open(f"/root/arouteserver/clients_rs1_{ af }.yml","w").write(client_rs1_txt)
+    open(f"/root/arouteserver/clients_rs1.yml","w").write(client_rs1_txt)
 open(irr_cache_path,"w").write(json.dumps(irr_cache,indent=4))

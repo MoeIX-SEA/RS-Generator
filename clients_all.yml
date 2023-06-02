@@ -13,3 +13,11 @@ clients:
     filtering:
       irrdb:
         as_sets: [RIPE::AS-TOHUNET]
+
+- asn: 140731
+  ip: "23.146.72.196"
+  name: "TOHU Public Internet"
+  cfg:
+    filtering:
+      irrdb:
+        as_sets: [RIPE::AS-TOHUNET]
