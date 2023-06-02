@@ -12,8 +12,8 @@ on:
         - info
         - warning
         - debug
-  schedule:
-    - cron:  '30 * * * *'
+#  schedule:
+#    - cron:  '30 * * * *'
 
 concurrency: 
   group: "PoemaIX-BIRDGen"
