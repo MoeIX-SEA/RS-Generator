@@ -7,7 +7,10 @@ import os
 import json
 import time
 from bird_parser import get_bird_session
-client = yaml.safe_load( open("/root/arouteserver/clients_all.yml").read())
+
+af = "v6"
+
+client = yaml.safe_load( open(f"/root/arouteserver/clients_all_{ af }.yml").read())
 yaml.SafeDumper.ignore_aliases = lambda self, data: True
 
 t1_asns = [ 701, 1239, 1299, 2914, 3257, 3320, 3356, 3491, 5511, 6453, 6461, 6762, 6830, 7018, 12956, 174, 1273, 2828, 4134, 4809, 4637, 6939, 7473, 7922, 9002 ]
@@ -16,7 +19,7 @@ t1_asns = [ 701, 1239, 1299, 2914, 3257, 3320, 3356, 3491, 5511, 6453, 6461, 676
 client_list = client["clients"]
 client_as_set = [(c["asn"],c["cfg"]["filtering"]["irrdb"]["as_sets"]) for c in client_list]
 client_as_set = {c[0]:c[1] if c[1] != [] else ["AS" + str(c[0])] for c in client_as_set}
-open("/root/gitrs/KSKB-IX/static/files/kskbix-all.yaml","w").write(yaml.safe_dump(client_as_set))
+#open("/root/gitrs/KSKB-IX/static/files/kskbix-all.yaml","w").write(yaml.safe_dump(client_as_set))
 
 expire = 86400
 
@@ -57,14 +60,14 @@ if sys.argv[1] == "2":
         as_sets_new = []
         for as_set in client["clients"][ci]["cfg"]["filtering"]["irrdb"]["as_sets"]:
             as_set_info = getinfo(as_set,6)
-            if as_set_info["prefix_num"] <= 100 and as_set_info["t1_asns"] == []:
+            if as_set_info["prefix_num"] <= 10000000 and as_set_info["t1_asns"] == []:
                 as_sets_new += [as_set]
             else:
                 if as_set_info["t1_asns"] != []:
                     print("Warning:",as_set ,"contains t1_asns:",as_set_info["t1_asns"])
         client["clients"][ci]["cfg"]["filtering"]["irrdb"]["as_sets"] = as_sets_new
     client_rs2_txt = yaml.safe_dump(client, sort_keys=False)
-    open("/root/arouteserver/clients_rs2.yml","w").write(client_rs2_txt)
+    open(f"/root/arouteserver/clients_rs2_{ af }.yml","w").write(client_rs2_txt)
 if sys.argv[1] == "1":
     for ci in range(len(client["clients"])):
         the_asn = client["clients"][ci]["asn"]
@@ -84,5 +87,5 @@ if sys.argv[1] == "1":
         client["clients"][ci]["cfg"]["filtering"].pop("max_prefix",None)
         my_as_sets = client["clients"][ci]["cfg"]["filtering"]["irrdb"]["as_sets"]
     client_rs1_txt = yaml.safe_dump(client, sort_keys=False)
-    open("/root/arouteserver/clients_rs1.yml","w").write(client_rs1_txt)
+    open(f"/root/arouteserver/clients_rs1_{ af }.yml","w").write(client_rs1_txt)
 open(irr_cache_path,"w").write(json.dumps(irr_cache,indent=4))
