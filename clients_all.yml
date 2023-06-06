@@ -21,3 +21,27 @@ clients:
     filtering:
       irrdb:
         as_sets: [RIPE::AS-TOHUNET]
+
+- asn: 200078
+  ip: "2a0a:280:f000:3::20:78:0"
+  name: "Potat0"
+  cfg:
+    filtering:
+      irrdb:
+        as_sets: [AS200078:AS-SET]
+
+- asn: 150184
+  ip: "2a0a:280:f000:3::15:184:0"
+  name: "OwONetwork"
+  cfg:
+    filtering:
+      irrdb:
+        as_sets: []
+        
+- asn: 199605
+  ip: "2a0a:280:f000:3::19:9605:0"
+  name: "JSMSR Network"
+  cfg:
+    filtering:
+      irrdb:
+        as_sets: [AS-JSMSR]
