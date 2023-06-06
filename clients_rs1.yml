@@ -12,7 +12,7 @@ clients:
     filtering:
       irrdb:
         as_sets:
-        - RIPE::AS-TOHUNET
+        - AS-TOHUNET-TRANSIT-WUS
 - asn: 140731
   ip: 23.146.72.196
   cfg:
@@ -40,3 +40,65 @@ clients:
       irrdb:
         as_sets:
         - AS-JSMSR
+- asn: 200536
+  ip: 2a0a:280:f000:3::20:536:0
+  cfg:
+    filtering:
+      irrdb:
+        as_sets:
+        - RIPE::AS-NET186
+- asn: 139317
+  ip: 2a0a:280:f000:3::13:9317:0
+  cfg:
+    filtering:
+      irrdb:
+        as_sets:
+        - AS-ZXINC
+- asn: 7721
+  ip: 2a0a:280:f000:3::7721:0
+  cfg:
+    filtering:
+      irrdb:
+        as_sets:
+        - AS7721:AS-QINCLOUD
+- asn: 142551
+  ip: 2a0a:280:f000:3::14:2551:0
+  cfg:
+    filtering:
+      irrdb:
+        as_sets:
+        - APNIC::AS-RAZU-AP
+- asn: 202939
+  ip: 2a0a:280:f000:3::20:2939:0
+  cfg:
+    filtering:
+      irrdb:
+        as_sets:
+        - AS-CHIMON
+- asn: 199656
+  ip: 2a0a:280:f000:3::19:9656:0
+  cfg:
+    filtering:
+      irrdb:
+        as_sets: []
+- asn: 204508
+  ip: 2a0a:280:f000:3::20:4508:0
+  cfg:
+    filtering:
+      irrdb:
+        as_sets:
+        - AS-MLGT
+- asn: 57934
+  ip: 2a0a:280:f000:3::5:7934:0
+  cfg:
+    filtering:
+      irrdb:
+        as_sets:
+        - AS-WJY
+- asn: 200105
+  ip: 2a0a:280:f000:3::20:105:0
+  cfg:
+    filtering:
+      irrdb:
+        as_sets:
+        - AS-MoeQing
