@@ -102,3 +102,10 @@ clients:
       irrdb:
         as_sets:
         - AS-MoeQing
+- asn: 201217
+  ip: 2a0a:280:f000:3::20:1217:0
+  cfg:
+    filtering:
+      irrdb:
+        as_sets:
+        - AS-RADISH
