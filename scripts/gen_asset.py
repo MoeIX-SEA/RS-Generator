@@ -10,7 +10,7 @@ from bird_parser import get_bird_session
 
 GITHUB_WORKSPACE = os.environ['GITHUB_WORKSPACE']
 
-client = yaml.safe_load( open(GITHUB_WORKSPACE + "/clients_all.yml").read())
+client = yaml.safe_load( open(GITHUB_WORKSPACE + "/output/clients_all.yml").read())
 yaml.SafeDumper.ignore_aliases = lambda self, data: True
 
 t1_asns = [ 701, 1239, 1299, 2914, 3257, 3320, 3356, 3491, 5511, 6453, 6461, 6762, 6830, 7018, 12956, 174, 1273, 2828, 4134, 4809, 4637, 6939, 7473, 7922, 9002 ]
@@ -105,8 +105,8 @@ if sys.argv[1] == "2":
     as_sets_estab_all = merge_dict_list(as_sets_estab.values())
     as_sets_all["all"] = as_sets_all_all
     as_sets_estab["all"] = as_sets_estab_all
-    open(GITHUB_WORKSPACE + "/kskbix-rs2.yaml","w").write(yaml.safe_dump(as_sets_all))
-    open(GITHUB_WORKSPACE + "/kskbix-rs2-estab.yaml","w").write(yaml.safe_dump(as_sets_estab))
+    open(GITHUB_WORKSPACE + "/output/kskbix-rs2.yaml","w").write(yaml.safe_dump(as_sets_all))
+    open(GITHUB_WORKSPACE + "/output/kskbix-rs2-estab.yaml","w").write(yaml.safe_dump(as_sets_estab))
 if sys.argv[1] == "1":
     for ci in range(len(client["clients"])):
         the_asn = client["clients"][ci]["asn"]
@@ -130,6 +130,6 @@ if sys.argv[1] == "1":
     as_sets_estab_all = merge_dict_list(as_sets_estab.values())
     as_sets_all["all"] = as_sets_all_all
     as_sets_estab["all"] = as_sets_estab_all
-    open(GITHUB_WORKSPACE + "/kskbix-rs1.yaml","w").write(yaml.safe_dump(as_sets_all))
-    open(GITHUB_WORKSPACE + "/kskbix-rs1-estab.yaml","w").write(yaml.safe_dump(as_sets_estab))
+    open(GITHUB_WORKSPACE + "/output/kskbix-rs1.yaml","w").write(yaml.safe_dump(as_sets_all))
+    open(GITHUB_WORKSPACE + "/output/kskbix-rs1-estab.yaml","w").write(yaml.safe_dump(as_sets_estab))
 open(irr_cache_path,"w").write(json.dumps(irr_cache,indent=4))
