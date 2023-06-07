@@ -10,7 +10,7 @@ from bird_parser import get_bird_session
 
 GITHUB_WORKSPACE = os.environ['GITHUB_WORKSPACE']
 
-client = yaml.safe_load( open(GITHUB_WORKSPACE + "/output/clients_all.yml").read())
+client = yaml.safe_load( open(GITHUB_WORKSPACE + "/clients_all.yml").read())
 yaml.SafeDumper.ignore_aliases = lambda self, data: True
 
 t1_asns = [ 701, 1239, 1299, 2914, 3257, 3320, 3356, 3491, 5511, 6453, 6461, 6762, 6830, 7018, 12956, 174, 1273, 2828, 4134, 4809, 4637, 6939, 7473, 7922, 9002 ]
