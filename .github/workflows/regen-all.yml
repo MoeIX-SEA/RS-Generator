@@ -78,7 +78,7 @@ jobs:
         path: |
           /root/gitrs
           /root/arouteserver/cache
-        key: /root/gitrs at RS-BIRDGen all v2
+        key: Cache /root/gitrs at 20230607
     - name: Sync from /root/gitrs
       if: steps.cache_ix_page.outputs.cache-hit != 'true'
       run: |
