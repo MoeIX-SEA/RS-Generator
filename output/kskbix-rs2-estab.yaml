@@ -1,0 +1,17 @@
+0:
+  as-set:
+  - AS-POEMA
+  as-set-flat:
+  - 138517
+  - 199594
+  - 203472
+  asn: 203472
+all:
+  as-set:
+  - AS-POEMA
+  as-set-flat:
+  - 138517
+  - 199594
+  - 203472
+  asn:
+  - 203472
