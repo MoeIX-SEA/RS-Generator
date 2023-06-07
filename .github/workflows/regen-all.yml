@@ -131,6 +131,7 @@ jobs:
     - name: Commit
       run: |
         cd $GITHUB_WORKSPACE
+        pkill openvpn || true
         git add -A
         git diff-index --quiet HEAD || git commit -m "update" -a
     - name: Push changes
