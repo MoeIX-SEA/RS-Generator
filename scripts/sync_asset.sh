@@ -1,9 +1,9 @@
 #!/bin/bash
-cd /root/arouteserver/cache
+cd $GITHUB_WORKSPACE/cache
 # export RIPE_PASSWD="XXXXXXXXXXXXXXXXXXXXXXX"
-/root/arouteserver/scripts/gen_ixpf.py > $GITHUB_WORKSPACE/output/ix-f.json
-/root/arouteserver/scripts/gen_asset.py 1
-/root/arouteserver/scripts/gen_asset.py 2
+$GITHUB_WORKSPACE/scripts/gen_ixpf.py > $GITHUB_WORKSPACE/output/ix-f.json
+$GITHUB_WORKSPACE/scripts/gen_asset.py 1
+$GITHUB_WORKSPACE/scripts/gen_asset.py 2
 
 #export AS_SET="AS-KSKB-IX"
 #export ARS_CLIENTS_PATH="$GITHUB_WORKSPACE/output/clients_all.yml"

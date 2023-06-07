@@ -4,7 +4,10 @@ import json
 import requests
 import yaml
 from bird_parser import get_bird_session
-client = yaml.safe_load( open("/root/arouteserver/clients_all.yml").read())
+
+GITHUB_WORKSPACE = os.environ['GITHUB_WORKSPACE']
+
+client = yaml.safe_load( open(GITHUB_WORKSPACE + "/clients_all.yml").read())
 yaml.SafeDumper.ignore_aliases = lambda self, data: True
 
 RS1_birdc = requests.get("http://[2a0a:280:f000:3::1]:3234/bird?q=show+protocols+all").text
