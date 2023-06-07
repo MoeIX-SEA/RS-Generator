@@ -170,3 +170,10 @@ clients:
       irrdb:
         as_sets:
         - AS-LILY
+- asn: 203314
+  ip: 2a0a:280:f000:3::20:3314:0
+  cfg:
+    filtering:
+      irrdb:
+        as_sets:
+        - AS203314:AS-HATS
