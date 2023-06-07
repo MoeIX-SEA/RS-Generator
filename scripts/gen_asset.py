@@ -87,8 +87,6 @@ if sys.argv[1] == "2":
     for ci in range(len(client["clients"])):
         the_asn = client["clients"][ci]["asn"]
         as_sets_new = []
-        if "enforce_origin_in_as_set" in client["clients"][ci]["cfg"]["filtering"]:
-            continue
         for as_set in client["clients"][ci]["cfg"]["filtering"]["irrdb"]["as_sets"]:
             as_set_info = getinfo(as_set,6)
             if as_set_info["prefix_num"] <= 100000 and as_set_info["t1_asns"] == []:
@@ -101,6 +99,9 @@ if sys.argv[1] == "2":
         asset_info["as-set-flat"] = []
         for asset in asset_info["as-set"]:
             asset_info["as-set-flat"] += irr_cache[asset]["ASNs"] if asset in irr_cache else [the_asn]
+        if "enforce_origin_in_as_set" in client["clients"][ci]["cfg"]["filtering"]:
+            asset_info["as-set"] = []
+            asset_info["as-set-flat"] = []
         as_sets_all[ci] = asset_info
         if the_asn in RS2_estab:
             as_sets_estab[ci] = asset_info
