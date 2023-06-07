@@ -87,7 +87,7 @@ if sys.argv[1] == "2":
     for ci in range(len(client["clients"])):
         the_asn = client["clients"][ci]["asn"]
         as_sets_new = []
-        if "enforce_origin_in_as_set" in client["clients"][ci]:
+        if "enforce_origin_in_as_set" in client["clients"][ci]["cfg"]["filtering"]:
             continue
         for as_set in client["clients"][ci]["cfg"]["filtering"]["irrdb"]["as_sets"]:
             as_set_info = getinfo(as_set,6)
