@@ -7,7 +7,10 @@ import os
 import json
 import time
 from bird_parser import get_bird_session
-client = yaml.safe_load( open("/root/arouteserver/clients_all.yml").read())
+
+GITHUB_WORKSPACE = os.environ['GITHUB_WORKSPACE']
+
+client = yaml.safe_load( open(GITHUB_WORKSPACE + "/clients_all.yml").read())
 yaml.SafeDumper.ignore_aliases = lambda self, data: True
 
 t1_asns = [ 701, 1239, 1299, 2914, 3257, 3320, 3356, 3491, 5511, 6453, 6461, 6762, 6830, 7018, 12956, 174, 1273, 2828, 4134, 4809, 4637, 6939, 7473, 7922, 9002 ]
@@ -16,20 +19,19 @@ t1_asns = [ 701, 1239, 1299, 2914, 3257, 3320, 3356, 3491, 5511, 6453, 6461, 676
 client_list = client["clients"]
 client_as_set = [(c["asn"],c["cfg"]["filtering"]["irrdb"]["as_sets"]) for c in client_list]
 client_as_set = {c[0]:c[1] if c[1] != [] else ["AS" + str(c[0])] for c in client_as_set}
-open("/root/gitrs/KSKB-IX/static/files/kskbix-all.yaml","w").write(yaml.safe_dump(client_as_set))
 
-RS1_birdc = requests.get("http://[2404:f4c0:f70e:1980::1:1]:3234/bird?q=show+protocols+all").text
+RS1_birdc = requests.get("http://[2a0a:280:f000:3::1]:3234/bird?q=show+protocols+all").text
 RS1_info  = get_bird_session(birdc_output=RS1_birdc)
-RS1_estab = set(map(lambda x:x["as"]["remote"],filter(lambda x:x["state"] == "Established" and x["route"]["ipv6"]["imported"] > 0 ,RS1_info)))
+RS1_estab = set(map(lambda x:x["as"]["remote"],filter(lambda x:x["state"] == "Established" and x["route"]["ipv4"]["imported"] + x["route"]["ipv6"]["imported"] > 0 ,RS1_info)))
 
-RS2_birdc = requests.get("http://[2404:f4c0:f70e:1980::2:1]:3234/bird?q=show+protocols+all").text
+RS2_birdc = requests.get("http://[2a0a:280:f000:3::3]:3234/bird?q=show+protocols+all").text
 RS2_info  = get_bird_session(birdc_output=RS2_birdc)
-RS2_estab = set(map(lambda x:x["as"]["remote"],filter(lambda x:x["state"] == "Established" and x["route"]["ipv6"]["imported"] > 0 ,RS2_info)))
+RS2_estab = set(map(lambda x:x["as"]["remote"],filter(lambda x:x["state"] == "Established" and x["route"]["ipv4"]["imported"] + x["route"]["ipv6"]["imported"] > 0 ,RS2_info)))
 
 expire = 86400
 
 irr_cache = {}
-irr_cache_path = "/root/arouteserver/cache/irr_cache.json"
+irr_cache_path = GITHUB_WORKSPACE + "/cache/irr_cache.json"
 if os.path.isfile(irr_cache_path):
     try:
         irr_cache = json.loads(open(irr_cache_path).read())
@@ -103,8 +105,8 @@ if sys.argv[1] == "2":
     as_sets_estab_all = merge_dict_list(as_sets_estab.values())
     as_sets_all["all"] = as_sets_all_all
     as_sets_estab["all"] = as_sets_estab_all
-    open("/root/gitrs/KSKB-IX/static/files/kskbix-rs2.yaml","w").write(yaml.safe_dump(as_sets_all))
-    open("/root/gitrs/KSKB-IX/static/files/kskbix-rs2-estab.yaml","w").write(yaml.safe_dump(as_sets_estab))
+    open(GITHUB_WORKSPACE + "/kskbix-rs2.yaml","w").write(yaml.safe_dump(as_sets_all))
+    open(GITHUB_WORKSPACE + "/kskbix-rs2-estab.yaml","w").write(yaml.safe_dump(as_sets_estab))
 if sys.argv[1] == "1":
     for ci in range(len(client["clients"])):
         the_asn = client["clients"][ci]["asn"]
@@ -128,6 +130,6 @@ if sys.argv[1] == "1":
     as_sets_estab_all = merge_dict_list(as_sets_estab.values())
     as_sets_all["all"] = as_sets_all_all
     as_sets_estab["all"] = as_sets_estab_all
-    open("/root/gitrs/KSKB-IX/static/files/kskbix-rs1.yaml","w").write(yaml.safe_dump(as_sets_all))
-    open("/root/gitrs/KSKB-IX/static/files/kskbix-rs1-estab.yaml","w").write(yaml.safe_dump(as_sets_estab))
+    open(GITHUB_WORKSPACE + "/kskbix-rs1.yaml","w").write(yaml.safe_dump(as_sets_all))
+    open(GITHUB_WORKSPACE + "/kskbix-rs1-estab.yaml","w").write(yaml.safe_dump(as_sets_estab))
 open(irr_cache_path,"w").write(json.dumps(irr_cache,indent=4))

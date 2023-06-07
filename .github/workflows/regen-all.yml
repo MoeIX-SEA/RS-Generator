@@ -42,16 +42,16 @@ jobs:
         #chmod 600  /root/.ssh/id_rsa_ixpage
         #echo "$SSH_KEY_ARS" > /root/.ssh/id_rsa_ars
         #chmod 600  /root/.ssh/id_rsa_ars
-        #echo "$IXLAN_OVPN_CONF" > /root/.ssh/ovpn-kskb-ix.conf
+        echo "$IXLAN_OVPN_CONF" > /root/.ssh/ovpn-ix.conf
         git config --global user.email si@kskb.eu.org
         git config --global user.name KusakabeSi
         echo $HOME
         echo $GITHUB_WORKSPACE
       shell: bash
-      #env:
+      env:
         #SSH_KEY_IXPAGE: ${{secrets.SSH_KEY_IXPAGE}}
         #SSH_KEY_ARS: ${{secrets.SSH_KEY_ARS}}
-        #IXLAN_OVPN_CONF: ${{secrets.IXLAN_OVPN_CONF}}
+        IXLAN_OVPN_CONF: ${{secrets.IXLAN_OVPN_CONF}}
     - name: Cache /root/.local/items files
       id: cache_pip
       uses: actions/cache@v2
@@ -65,7 +65,7 @@ jobs:
       run: sudo apt-get install -y bgpq4 openvpn net-tools
     - name: connect to openvpn
       run: |
-        #sudo openvpn --daemon --config /root/.ssh/ovpn-kskb-ix.conf
+        sudo openvpn --daemon --config /root/.ssh/ovpn-ix.conf
         true
     - name: Get current time
       uses: gerred/actions/current-time@master
@@ -108,16 +108,16 @@ jobs:
         pip3 install -r /root/gitrs/ars/requirements.txt
         /root/arouteserver/scripts/gen_rs.sh
       env:
-        SECRET_PEERINGDB_API_KEY: ${{secrets.SECRET_PEERINGDB_API_KEY}}
+        #SECRET_PEERINGDB_API_KEY: ${{secrets.SECRET_PEERINGDB_API_KEY}}
         HOME: /root
       shell: bash
       
-    - name: push ixpage back
+    - name: sync asset and push ixpage back
       run: |
         #pip3 install mkdocs-bootswatch pymdown-extensions mkdocs-material jieba
         #git config --global user.email si@kskb.eu.org
         #git config --global user.name KusakabeSi
-        #/root/arouteserver/scripts/sync_asset.sh
+        /root/arouteserver/scripts/sync_asset.sh
         #/root/arouteserver/scripts/sync_ixpage.sh -b
         true
       env:

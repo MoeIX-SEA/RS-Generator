@@ -7,15 +7,15 @@ from bird_parser import get_bird_session
 client = yaml.safe_load( open("/root/arouteserver/clients_all.yml").read())
 yaml.SafeDumper.ignore_aliases = lambda self, data: True
 
-RS1_birdc = requests.get("http://[2404:f4c0:f70e:1980::1:1]:3234/bird?q=show+protocols+all").text
+RS1_birdc = requests.get("http://[2a0a:280:f000:3::1]:3234/bird?q=show+protocols+all").text
 RS1_info  = get_bird_session(birdc_output=RS1_birdc)
 RS1_estab = set(map(lambda x:x["as"]["remote"],filter(lambda x:x["state"] == "Established" and x["route"]["ipv6"]["imported"] > 0 ,RS1_info)))
 
 # prepare ixp_list data
 ixp_list = [{
     "ixp_id": 0,
-    "ixf_id": 1061,
-    "shortname": "KSKB-IX",
+    "ixf_id": 0,
+    "shortname": "MOEIX-SEA",
     "vlan": [
         {"id": 0}
     ],
@@ -23,9 +23,9 @@ ixp_list = [{
         {
             "id": 1,
             "name": "main switch",
-            "colo": "KSKB Home",
-            "city": "Taiwan",
-            "country": "TW",
+            "colo": "",
+            "city": "US",
+            "country": "US",
             "manufacturer": "unknown",
             "model": "unknown"
         }
@@ -35,7 +35,7 @@ ixp_list = [{
 # prepare member_list data
 member_list = [
   {
-    "asnum": 199594,
+    "asnum": 210979,
     "connection_list": [
       {
         "ixp_id": 0,
@@ -50,16 +50,24 @@ member_list = [
           {
             "vlan_id": 0,
             "ipv6": {
-              "address": "2404:f4c0:f70e:1980::1:1",
-              "as_macro": "AS-KSKB-IX-RS1",
+              "address": "2a0a:280:f000:3::1",
+              "as_macro": "",
               "routeserver": True
             }
           },
           {
             "vlan_id": 0,
             "ipv6": {
-              "address": "2404:f4c0:f70e:1980::2:1",
-              "as_macro": "AS-KSKB-IX-RS2",
+              "address": "2a0a:280:f000:3::2",
+              "as_macro": "",
+              "routeserver": True
+            }
+          },
+          {
+            "vlan_id": 0,
+            "ipv6": {
+              "address": "2a0a:280:f000:3::2",
+              "as_macro": "",
               "routeserver": True
             }
           }
