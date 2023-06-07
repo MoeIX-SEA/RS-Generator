@@ -109,3 +109,17 @@ clients:
       irrdb:
         as_sets:
         - AS-RADISH
+- asn: 203888
+  ip: 2a0a:280:f000:3::20:3888:0
+  cfg:
+    filtering:
+      irrdb:
+        as_sets:
+        - AS-YU
+- asn: 203236
+  ip: 2a0a:280:f000:3::20:3236:0
+  cfg:
+    filtering:
+      irrdb:
+        as_sets:
+        - AS-LILY
