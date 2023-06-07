@@ -10,13 +10,11 @@ on:
         type: choice
         options:
         - info
-        - warning
-        - debug
   schedule:
     - cron:  '0 0 * * *'
 
 concurrency: 
-  group: "PoemaIX-BIRDGen"
+  group: "MoeIX-BIRDGen"
   cancel-in-progress: true
 
 jobs:
@@ -62,7 +60,7 @@ jobs:
           /root/.local/share
         key: /root/.local/items at RS-BIRDGen all
     - name: Install depends
-      run: sudo apt-get install -y bgpq4 openvpn net-tools socat
+      run: sudo apt-get install -y bgpq4 openvpn net-tools
     - name: connect to openvpn
       run: |
         sudo openvpn --daemon --config /root/.ssh/ovpn-ix.conf
