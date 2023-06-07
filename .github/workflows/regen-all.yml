@@ -86,7 +86,7 @@ jobs:
         #git clone git@github.com:KSKBpage/KSKB-IX.git /root/gitrs/KSKB-IX
         #export GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /root/.ssh/id_rsa_ars"
         git clone https://github.com/KusakabeShi/arouteserver /root/gitrs/ars
-        #git clone https://github.com/KusakabeShi/RIPE-AS-SET-SYNC.git /root/gitrs/RIPE-AS-SET-SYNC
+        git clone https://github.com/KusakabeShi/RIPE-AS-SET-SYNC.git /root/gitrs/RIPE-AS-SET-SYNC
     - name: reset to girts origin
       run: |
         #export GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /root/.ssh/id_rsa_ixpage"
@@ -97,7 +97,9 @@ jobs:
         cd  /root/gitrs/ars
         git fetch --all --force
         #git reset --hard origin/KSKB-IX
-        #cd  /root/gitrs/RIPE-AS-SET-SYNC
+        cd  /root/gitrs/RIPE-AS-SET-SYNC
+        git fetch --all --force
+        git reset --hard origin/main
         #cd  /root/gitrs/KSKB-IX
         #git fetch --all --force
         #git reset --hard origin/main
