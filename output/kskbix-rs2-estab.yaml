@@ -18,18 +18,27 @@
   as-set-flat:
   - 142551
   asn: 142551
+11:
+  as-set:
+  - AS199656
+  as-set-flat:
+  - 199656
+  asn: 199656
 all:
   as-set:
   - AS-POEMA
   - AS200078:AS-SET
   - APNIC::AS-RAZU-AP
+  - AS199656
   as-set-flat:
   - 138517
   - 199594
   - 203472
   - 200078
   - 142551
+  - 199656
   asn:
   - 203472
   - 200078
   - 142551
+  - 199656
