@@ -99,7 +99,7 @@ if sys.argv[1] == "2":
         asset_info["as-set-flat"] = []
         for asset in asset_info["as-set"]:
             asset_info["as-set-flat"] += irr_cache[asset]["ASNs"] if asset in irr_cache else [the_asn]
-        if "enforce_origin_in_as_set" in client["clients"][ci]["cfg"]["filtering"]:
+        if "enforce_origin_in_as_set" in client["clients"][ci]["cfg"]["filtering"]["irrdb"]:
             asset_info["as-set"] = []
             asset_info["as-set-flat"] = []
         as_sets_all[ci] = asset_info
