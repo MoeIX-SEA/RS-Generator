@@ -3,6 +3,7 @@ import datetime
 import json
 import requests
 import yaml
+import os
 from bird_parser import get_bird_session
 
 GITHUB_WORKSPACE = os.environ['GITHUB_WORKSPACE']
