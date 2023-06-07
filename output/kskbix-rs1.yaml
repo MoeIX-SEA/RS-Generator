@@ -808,6 +808,27 @@
   - 203899
   - 208223
   asn: 203314
+20:
+  as-set:
+  - AS-NICHONET
+  as-set-flat:
+  - 142130
+  - 142281
+  - 142282
+  asn: 142130
+21:
+  as-set:
+  - AS-BLING
+  as-set-flat:
+  - 199613
+  - 200949
+  asn: 199613
+22:
+  as-set:
+  - AS208223:AS-ALL
+  as-set-flat:
+  - 208223
+  asn: 208223
 all:
   as-set:
   - AS-POEMA
@@ -829,6 +850,9 @@ all:
   - AS-YU
   - AS-LILY
   - AS203314:AS-HATS
+  - AS-NICHONET
+  - AS-BLING
+  - AS208223:AS-ALL
   as-set-flat:
   - 138517
   - 199594
@@ -1054,3 +1078,6 @@ all:
   - 203888
   - 203236
   - 203314
+  - 142130
+  - 199613
+  - 208223
