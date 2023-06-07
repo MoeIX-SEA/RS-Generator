@@ -6,12 +6,30 @@
   - 199594
   - 203472
   asn: 203472
+3:
+  as-set:
+  - AS200078:AS-SET
+  as-set-flat:
+  - 200078
+  asn: 200078
+9:
+  as-set:
+  - APNIC::AS-RAZU-AP
+  as-set-flat:
+  - 142551
+  asn: 142551
 all:
   as-set:
   - AS-POEMA
+  - AS200078:AS-SET
+  - APNIC::AS-RAZU-AP
   as-set-flat:
   - 138517
   - 199594
   - 203472
+  - 200078
+  - 142551
   asn:
   - 203472
+  - 200078
+  - 142551
