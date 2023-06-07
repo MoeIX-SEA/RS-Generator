@@ -199,3 +199,30 @@ clients:
       irrdb:
         as_sets: [AS203314:AS-HATS]
 
+
+- asn: 142130
+  ip: "2a0a:280:f000:3::14:2130:0"
+  name: "NICHONET"
+  cfg:
+    filtering:
+      irrdb:
+        as_sets: [AS-NICHONET]
+
+
+- asn: 199613
+  ip: "2a0a:280:f000:3::19:9613:0"
+  name: "Bling Network"
+  cfg:
+    filtering:
+      irrdb:
+        as_sets: [AS-BLING]
+
+
+- asn: 208223
+  ip: "2a0a:280:f000:3::20:8223:0"
+  name: "fOxO Internet Service Provider "
+  cfg:
+    filtering:
+      irrdb:
+        as_sets: [AS208223:AS-ALL]
+
