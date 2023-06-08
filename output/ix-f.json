@@ -639,6 +639,56 @@
           ]
         }
       ]
+    },
+    {
+      "asnum": 200850,
+      "connection_list": [
+        {
+          "ixp_id": 0,
+          "state": "inactive",
+          "if_list": [
+            {
+              "if_speed": 250,
+              "switch_id": 1
+            }
+          ],
+          "vlan_list": [
+            {
+              "vlan_id": 0,
+              "ipv6": {
+                "address": "2a0a:280:f000:3::20:850:0",
+                "as_macro": "AS-NETSYN",
+                "routeserver": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asnum": 207705,
+      "connection_list": [
+        {
+          "ixp_id": 0,
+          "state": "inactive",
+          "if_list": [
+            {
+              "if_speed": 250,
+              "switch_id": 1
+            }
+          ],
+          "vlan_list": [
+            {
+              "vlan_id": 0,
+              "ipv6": {
+                "address": "2a0a:280:f000:3::20:7705:0",
+                "as_macro": "AS-JKNET",
+                "routeserver": false
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

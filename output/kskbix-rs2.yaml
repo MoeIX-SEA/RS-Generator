@@ -618,6 +618,20 @@
   as-set-flat:
   - 208223
   asn: 208223
+23:
+  as-set:
+  - AS-NETSYN
+  as-set-flat:
+  - 200850
+  asn: 200850
+24:
+  as-set:
+  - AS-JKNET
+  as-set-flat:
+  - 199594
+  - 207705
+  - 211390
+  asn: 207705
 all:
   as-set:
   - AS-POEMA
@@ -641,6 +655,8 @@ all:
   - AS-NICHONET
   - AS-BLING
   - AS208223:AS-ALL
+  - AS-NETSYN
+  - AS-JKNET
   as-set-flat:
   - 138517
   - 199594
@@ -847,6 +863,7 @@ all:
   - 399642
   - 400312
   - 210632
+  - 207705
   asn:
   - 203472
   - 140731
@@ -869,3 +886,5 @@ all:
   - 142130
   - 199613
   - 208223
+  - 200850
+  - 207705
