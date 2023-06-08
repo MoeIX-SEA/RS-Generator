@@ -473,18 +473,6 @@
   - 208223
   - 211843
   asn: 200105
-16:
-  as-set:
-  - AS-RADISH
-  as-set-flat:
-  - 138517
-  - 199613
-  - 199656
-  - 200631
-  - 201217
-  - 203472
-  - 211390
-  asn: 201217
 17:
   as-set:
   - AS-YU
@@ -511,7 +499,6 @@ all:
   - AS-MLGT
   - AS-MoeQing
   - RIPE::AS-TOHUNET
-  - AS-RADISH
   - AS-YU
   - AS-BLING
   as-set-flat:
@@ -730,6 +717,5 @@ all:
   - 199656
   - 204508
   - 200105
-  - 201217
   - 203888
   - 199613
