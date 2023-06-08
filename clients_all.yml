@@ -220,9 +220,27 @@ clients:
 
 - asn: 208223
   ip: "2a0a:280:f000:3::20:8223:0"
-  name: "fOxO Internet Service Provider "
+  name: "fOxO Internet Service Provider"
   cfg:
     filtering:
       irrdb:
         as_sets: [AS208223:AS-ALL]
 
+
+
+- asn: 200850
+  ip: "2a0a:280:f000:3::20:850:0"
+  name: "netsyn"
+  cfg:
+    filtering:
+      irrdb:
+        as_sets: [AS-NETSYN]
+
+
+- asn: 207705
+  ip: "2a0a:280:f000:3::20:7705:0"
+  name: "JK Network"
+  cfg:
+    filtering:
+      irrdb:
+        as_sets: [AS-JKNET]
