@@ -414,6 +414,12 @@
   - 199613
   - 200949
   asn: 199613
+22:
+  as-set:
+  - AS208223:AS-ALL
+  as-set-flat:
+  - 208223
+  asn: 208223
 24:
   as-set:
   - AS-JKNET
@@ -437,6 +443,7 @@ all:
   - AS-RADISH
   - AS-YU
   - AS-BLING
+  - AS208223:AS-ALL
   - AS-JKNET
   as-set-flat:
   - 138517
@@ -651,4 +658,5 @@ all:
   - 201217
   - 203888
   - 199613
+  - 208223
   - 207705
