@@ -144,6 +144,15 @@
   - 399642
   - 400312
   asn: 139317
+8:
+  as-set:
+  - AS7721:AS-QINCLOUD
+  as-set-flat:
+  - 7721
+  - 199613
+  - 203472
+  - 204508
+  asn: 7721
 9:
   as-set:
   - APNIC::AS-RAZU-AP
@@ -212,6 +221,7 @@ all:
   - AS200078:AS-SET
   - AS150184
   - AS-ZXINC
+  - AS7721:AS-QINCLOUD
   - APNIC::AS-RAZU-AP
   - AS-CHIMON
   - AS199656
@@ -358,6 +368,7 @@ all:
   - 200078
   - 150184
   - 139317
+  - 7721
   - 142551
   - 202939
   - 199656
