@@ -93,7 +93,7 @@ jobs:
         export GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /root/.ssh/id_rsa_ixpage"
         cd  /root/gitrs/IXPAGE
         git fetch --all --force
-        git reset --hard origin/main
+        git reset --hard origin/master
         #export GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /root/.ssh/id_rsa_ars"
         cd  /root/gitrs/ars
         git fetch --all --force

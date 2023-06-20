@@ -3,7 +3,7 @@ set -x
 set -e
 cd /root/gitrs/IXPAGE
 git fetch --all --force
-git reset --hard origin/main
+git reset --hard origin/master
 /root/arouteserver/scripts/gen_member_page.py
 DATE=$(date +'%Y-%m-%d %H:%M:%S')
 GIT_LAST_MSG=$(git log -1 --pretty=%B)
