@@ -77,7 +77,7 @@ jobs:
         path: |
           /root/gitrs
           /root/arouteserver/cache
-        key: Cache /root/gitrs at 20230621
+        key: Cache /root/gitrs at 20230621.2
     - name: Sync from /root/gitrs
       if: steps.cache_ix_page.outputs.cache-hit != 'true'
       run: |
