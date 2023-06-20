@@ -132,7 +132,7 @@
               "vlan_id": 0,
               "ipv6": {
                 "address": "23.146.72.196",
-                "as_macro": "RIPE::AS-TOHUNET",
+                "as_macro": "AS-TOHUNET-TRANSIT-WUS",
                 "routeserver": true
               }
             }
@@ -457,7 +457,7 @@
               "vlan_id": 0,
               "ipv6": {
                 "address": "23.146.72.197",
-                "as_macro": "RIPE::AS-TOHUNET",
+                "as_macro": "AS-MoeQing",
                 "routeserver": true
               }
             }
