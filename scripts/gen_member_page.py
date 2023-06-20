@@ -104,17 +104,7 @@ def session_to_dict(sess_info):
     return result
 
 
-#RS1_birdc = requests.get("http://[2404:f4c0:f70e:1980::1:1]:3234/bird?q=show+protocols+all").text
-#RS1_info = session_to_dict(get_bird_session(birdc_output=RS1_birdc))
-#RS1_baseurl = "https://ixlg.kskb.eu.org/__act__/2404:f4c0:f70e:1980::1:1/"
 
-#RS2_birdc = requests.get("http://[2404:f4c0:f70e:1980::2:1]:3234/bird?q=show+protocols+all").text
-#RS2_info = session_to_dict(get_bird_session(birdc_output=RS2_birdc))
-#RS2_baseurl = "https://ixlg.kskb.eu.org/__act__/2404:f4c0:f70e:1980::2:1/"
-
-#RS3_birdc = requests.get("http://[2404:f4c0:f70e:1980::3:1]:3234/bird?q=show+protocols+all").text
-#RS3_info = session_to_dict(get_bird_session(birdc_output=RS3_birdc))
-#RS3_baseurl = "https://ixlg.kskb.eu.org/__act__/2404:f4c0:f70e:1980::3:1/"
 
 all_conf = yaml.safe_load( open("/root/arouteserver/clients_all.yml").read())
 
@@ -186,7 +176,7 @@ md_output = """# Members
 
 ## Connection status
 
-For real time data, check out our [Looking Glass](https://ixlg.kskb.eu.org/)
+For real time data, check out our [Looking Glass](https://lg-moeix.moeqing.com:8443/)
 
 """
 
@@ -195,8 +185,8 @@ md_output += tomark(status)
 md_output += """
 <script>
 let rs_list = ["RS1:2a0a:280:f000:3::1","RS2:2a0a:280:f000:3::2","RS3:2a0a:280:f000:3::3"];
-let lg_baseurl = "https://ixlg.kskb.eu.org/";
-let lg_json_api = "https://ixlgjson.poema.net.eu.org/bird?RS=";
+let lg_baseurl = "https://lg-moeix.moeqing.com:8443/";
+let lg_json_api = "https://lgapi-moeix.moeqing.com:8443/bird?RS=";
 
 function get_state_url(num,name,type,proxy_url,baseurl){
     if (num === 0){
@@ -236,4 +226,4 @@ window.setInterval(function(){
 </script>
 """
 
-open("/root/gitrs/KSKB-IX/docs/members.md","w").write(md_output)
+open("/root/gitrs/IXPAGE/docs/members.md","w").write(md_output)
