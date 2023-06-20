@@ -157,8 +157,9 @@ for i in range(len(all_conf["clients"])):
     item["ASN"] = conf["asn"]
     item["Name"] = f'[{ conf["name"] }](https://bgp.tools/as/{asn})'
     item["AS-SET"] = ", ".join(conf["cfg"]["filtering"]["irrdb"]["as_sets"])
-    item["RS R1"]  = "- {: neigh_ip='" + format_ip(conf["ip"]) + "' RS='RSR1' }"
-    item["RS T"]   = "- {: neigh_ip='" + format_ip(conf["ip"]) + "' RS='RST' }"
+    item["RS1"]  = "- {: neigh_ip='" + format_ip(conf["ip"]) + "' RS='RS1' }"
+    item["RS2"]  = "- {: neigh_ip='" + format_ip(conf["ip"]) + "' RS='RS2' }"
+    item["RS3"]  = "- {: neigh_ip='" + format_ip(conf["ip"]) + "' RS='RS3' }"
     status += [item]
 
 def tomark(listOfDicts):
@@ -183,11 +184,6 @@ def tomark(listOfDicts):
     
 md_output = """# Members
 
-## AS-SET
-* All members: [AS-KSKB-IX](https://apps.db.ripe.net/db-web-ui/lookup?source=RIPE&type=as-set&key=AS-KSKB-IX)
-* RS Regular 1 connected members: [AS-KSKB-IX-RS1](https://apps.db.ripe.net/db-web-ui/lookup?source=RIPE&type=as-set&key=AS-KSKB-IX-RS1)
-* RS Transitable connected members: [AS-KSKB-IX-RS2](https://apps.db.ripe.net/db-web-ui/lookup?source=RIPE&type=as-set&key=AS-KSKB-IX-RS2)
-
 ## Connection status
 
 For real time data, check out our [Looking Glass](https://ixlg.kskb.eu.org/)
@@ -198,7 +194,7 @@ md_output += tomark(status)
 
 md_output += """
 <script>
-let rs_list = ["RSR1:2404:f4c0:f70e:1980::1:1","RST:2404:f4c0:f70e:1980::2:1"];
+let rs_list = ["RS1:2a0a:280:f000:3::1","RS2:2a0a:280:f000:3::2","RS3:2a0a:280:f000:3::3"];
 let lg_baseurl = "https://ixlg.kskb.eu.org/";
 let lg_json_api = "https://ixlgjson.poema.net.eu.org/bird?RS=";
 
