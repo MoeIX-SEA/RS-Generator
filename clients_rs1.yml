@@ -19,7 +19,7 @@ clients:
     filtering:
       irrdb:
         as_sets:
-        - RIPE::AS-TOHUNET
+        - AS-TOHUNET-TRANSIT-WUS
 - asn: 200078
   ip: 2a0a:280:f000:3::20:78:0
   cfg:
@@ -120,7 +120,7 @@ clients:
     filtering:
       irrdb:
         as_sets:
-        - RIPE::AS-TOHUNET
+        - AS-MoeQing
       never_via_route_servers:
         peering_db: false
         asns: []
