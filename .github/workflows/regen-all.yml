@@ -48,7 +48,7 @@ jobs:
       shell: bash
       env:
         SSH_KEY_IXPAGE: ${{secrets.SSH_KEY_IXPAGE}}
-        IXPAGE_REPO: ${{ env.IXPAGE_REPO }}
+        IXPAGE_REPO: ${{ vars.IXPAGE_REPO }}
         #SSH_KEY_ARS: ${{secrets.SSH_KEY_ARS}}
         IXLAN_OVPN_CONF: ${{secrets.IXLAN_OVPN_CONF}}
     - name: Cache /root/.local/items files
@@ -88,7 +88,7 @@ jobs:
         git clone https://github.com/KusakabeShi/RIPE-AS-SET-SYNC.git /root/gitrs/RIPE-AS-SET-SYNC
         env:
           SSH_KEY_IXPAGE: ${{secrets.SSH_KEY_IXPAGE}}
-          IXPAGE_REPO: ${{ env.IXPAGE_REPO }}
+          IXPAGE_REPO: ${{ vars.IXPAGE_REPO }}
     - name: reset to girts origin
       run: |
         export GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /root/.ssh/id_rsa_ixpage"
@@ -130,7 +130,7 @@ jobs:
         HOME: /root
         RIPE_PASSWD: ${{secrets.RIPE_PASSWD}}
         MAX_DEPTH: ${{vars.MAX_DEPTH}}
-        IXPAGE_REPO: ${{ env.IXPAGE_REPO }}
+        IXPAGE_REPO: ${{ vars.IXPAGE_REPO }}
         #GIT_SSH_COMMAND: "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /root/.ssh/id_rsa_ixpage"
       shell: bash
     - name: Commit
