@@ -59,7 +59,7 @@ jobs:
           /root/.local/lib
           /root/.local/bin
           /root/.local/share
-        key: /root/.local/items at RS-BIRDGen all
+        key: /root/.local/items at RS-BIRDGen at 20230621
     - name: Install depends
       run: sudo apt-get install -y bgpq4 openvpn net-tools
     - name: connect to openvpn
@@ -77,7 +77,7 @@ jobs:
         path: |
           /root/gitrs
           /root/arouteserver/cache
-        key: Cache /root/gitrs at 20230607
+        key: Cache /root/gitrs at 20230621
     - name: Sync from /root/gitrs
       if: steps.cache_ix_page.outputs.cache-hit != 'true'
       run: |
