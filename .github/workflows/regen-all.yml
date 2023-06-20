@@ -122,6 +122,7 @@ jobs:
         #git config --global user.email si@kskb.eu.org
         #git config --global user.name KusakabeSi
         #/root/arouteserver/scripts/sync_asset.sh
+        export GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /root/.ssh/id_rsa_ixpage"
         /root/arouteserver/scripts/sync_ixpage.sh -b
         true
       env:
