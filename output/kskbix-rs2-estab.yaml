@@ -3,6 +3,7 @@
   - AS-TOHUNET-TRANSIT-WUS
   as-set-flat:
   - 112
+  - 25152
   - 140731
   - 211843
   asn: 140731
@@ -11,6 +12,7 @@
   - AS-TOHUNET-TRANSIT-WUS
   as-set-flat:
   - 112
+  - 25152
   - 140731
   - 211843
   asn: 140731
@@ -336,6 +338,7 @@ all:
   - AS-JKNET
   as-set-flat:
   - 112
+  - 25152
   - 140731
   - 211843
   - 200078
