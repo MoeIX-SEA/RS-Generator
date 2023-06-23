@@ -9,7 +9,7 @@ clients:
 
 - asn: 140731
   ip: "2a0a:280:f000:3::14:0731:0"
-  name: "TOHU Public Internet(v6)"
+  name: "TOHU Public Internet"
   cfg:
     filtering:
       irrdb:
