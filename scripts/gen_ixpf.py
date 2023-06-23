@@ -81,7 +81,7 @@ member_list = [
   }
 ]
 
-member_dict = []
+member_dict = {}
 for ci in range(len(client["clients"])):
     asnum = client["clients"][ci]["asn"]
     as_macros = client["clients"][ci]["cfg"]["filtering"]["irrdb"]["as_sets"]
