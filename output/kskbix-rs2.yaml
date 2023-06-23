@@ -17,26 +17,17 @@
   asn: 140731
 2:
   as-set:
-  - AS-TOHUNET-TRANSIT-WUS
-  as-set-flat:
-  - 112
-  - 25152
-  - 140731
-  - 211843
-  asn: 140731
-3:
-  as-set:
   - AS200078:AS-SET
   as-set-flat:
   - 200078
   asn: 200078
-4:
+3:
   as-set:
   - AS150184
   as-set-flat:
   - 150184
   asn: 150184
-5:
+4:
   as-set:
   - AS-JSMSR
   as-set-flat:
@@ -130,7 +121,7 @@
   - 399642
   - 400312
   asn: 199605
-6:
+5:
   as-set:
   - RIPE::AS-NET186
   as-set-flat:
@@ -156,7 +147,7 @@
   - 203236
   - 203899
   asn: 200536
-7:
+6:
   as-set:
   - AS-ZXINC
   as-set-flat:
@@ -282,7 +273,7 @@
   - 399642
   - 400312
   asn: 139317
-8:
+7:
   as-set:
   - AS7721:AS-QINCLOUD
   as-set-flat:
@@ -291,25 +282,25 @@
   - 203472
   - 204508
   asn: 7721
-9:
+8:
   as-set:
   - APNIC::AS-RAZU-AP
   as-set-flat:
   - 142551
   asn: 142551
-10:
+9:
   as-set:
   - AS-CHIMON
   as-set-flat:
   - 202939
   asn: 202939
-11:
+10:
   as-set:
   - AS199656
   as-set-flat:
   - 199656
   asn: 199656
-12:
+11:
   as-set:
   - AS-MLGT
   as-set-flat:
@@ -317,7 +308,7 @@
   - 204508
   - 211604
   asn: 204508
-13:
+12:
   as-set:
   - AS-WJY
   as-set-flat:
@@ -325,15 +316,15 @@
   - 199650
   - 203899
   asn: 57934
+13:
+  as-set: []
+  as-set-flat: []
+  asn: 200105
 14:
   as-set: []
   as-set-flat: []
   asn: 200105
 15:
-  as-set: []
-  as-set-flat: []
-  asn: 200105
-16:
   as-set:
   - AS-RADISH
   as-set-flat:
@@ -343,20 +334,20 @@
   - 201217
   - 211390
   asn: 201217
-17:
+16:
   as-set:
   - AS-YU
   as-set-flat:
   - 200954
   - 203888
   asn: 203888
-18:
+17:
   as-set:
   - AS-LILY
   as-set-flat:
   - 203236
   asn: 203236
-19:
+18:
   as-set:
   - AS203314:AS-HATS
   as-set-flat:
@@ -367,7 +358,7 @@
   - 203236
   - 203314
   asn: 203314
-20:
+19:
   as-set:
   - AS-NICHONET
   as-set-flat:
@@ -375,26 +366,26 @@
   - 142281
   - 142282
   asn: 142130
-21:
+20:
   as-set:
   - AS-BLING
   as-set-flat:
   - 199613
   - 200949
   asn: 199613
-22:
+21:
   as-set:
   - AS208223:AS-ALL
   as-set-flat:
   - 208223
   asn: 208223
-23:
+22:
   as-set:
   - AS-NETSYN
   as-set-flat:
   - 200850
   asn: 200850
-24:
+23:
   as-set:
   - AS-JKNET
   as-set-flat:
