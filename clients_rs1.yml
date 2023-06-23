@@ -7,14 +7,14 @@ clients:
         as_sets:
         - AS-POEMA
 - asn: 140731
-  ip: 2a0a:280:f000:3::14:0731:0
+  ip: 23.146.72.196
   cfg:
     filtering:
       irrdb:
         as_sets:
         - AS-TOHUNET-TRANSIT-WUS
 - asn: 140731
-  ip: 23.146.72.196
+  ip: 2a0a:280:f000:3::14:0731:0
   cfg:
     filtering:
       irrdb:
@@ -96,7 +96,7 @@ clients:
         as_sets:
         - AS-WJY
 - asn: 200105
-  ip: 2a0a:280:f000:3::20:105:0
+  ip: 23.146.72.197
   cfg:
     filtering:
       irrdb:
@@ -115,7 +115,7 @@ clients:
         min: 0
         max: 48
 - asn: 200105
-  ip: 23.146.72.197
+  ip: 2a0a:280:f000:3::20:105:0
   cfg:
     filtering:
       irrdb:
