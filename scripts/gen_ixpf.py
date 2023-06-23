@@ -115,9 +115,7 @@ for ci in range(len(client["clients"])):
     if asnum not in member_dict:
         member_dict[asnum] = member_item
     else:
-        print(member_dict[asnum]["connection_list"]["vlan_list"])
-        print(connection_item["vlan_list"])
-        member_dict[asnum]["connection_list"]["vlan_list"] += connection_item["vlan_list"]
+        member_dict[asnum]["connection_list"][0]["vlan_list"] += connection_item["vlan_list"]
 
 member_list.append(list(member_dict.values()))
 
