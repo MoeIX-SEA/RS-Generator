@@ -209,8 +209,8 @@ async function render_mamber_list(rs_info){
             table_block.innerHTML = "-".link(get_state_url(0,client.name,"detail",proxy_url,lg_baseurl))
             continue;
         };
-        let num_i = client.route.ipv6.imported;
-        let num_f = client.route.ipv6.filtered;
+        let num_i = client.route.ipv4.imported + client.route.ipv6.imported;
+        let num_f = client.route.ipv4.filtered + client.route.ipv6.filtered;
         table_block.innerHTML = num_i.toString().link(get_state_url(num_i,client.name,"route_from_protocol_all",proxy_url,lg_baseurl)) + "," + 
         num_f.toString().link(get_state_url(num_f,client.name,"route_filtered_from_protocol_all",proxy_url,lg_baseurl));
     };
