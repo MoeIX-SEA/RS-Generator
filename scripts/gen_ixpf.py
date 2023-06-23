@@ -80,6 +80,8 @@ member_list = [
     ]
   }
 ]
+
+member_dict = []
 for ci in range(len(client["clients"])):
     asnum = client["clients"][ci]["asn"]
     as_macros = client["clients"][ci]["cfg"]["filtering"]["irrdb"]["as_sets"]
@@ -110,7 +112,12 @@ for ci in range(len(client["clients"])):
         "asnum": asnum,
         "connection_list": [connection_item]
     }
-    member_list.append(member_item)
+    if asnum not in member_dict:
+        member_dict[asnum] = member_item
+    else:
+        member_dict[asnum]["connection_list"]["vlan_list"] += connection_item["vlan_list"]
+
+member_list.append(list(member_dict.values()))
 
 # prepare the JSON structure
 data_dict = {
