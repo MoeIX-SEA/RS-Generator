@@ -2,6 +2,7 @@
 import datetime
 import json
 import requests
+import ipaddress
 import yaml
 import os
 from bird_parser import get_bird_session
@@ -88,6 +89,11 @@ for ci in range(len(client["clients"])):
     as_macro = as_macros[0] if len(as_macros) > 0 else ""
     routeserver = asnum in RS1_estab
     state = "active" if routeserver else "inactive"
+    af = "error"
+    if type(ipaddress.ip_address(client["clients"][ci]["ip"])) == ipaddress.IPv4Address:
+      af = "ipv4"
+    if type(ipaddress.ip_address(client["clients"][ci]["ip"])) == ipaddress.IPv6Address:
+      af = "ipv6"
     connection_item = {
         "ixp_id": 0,
         "state": state,
@@ -100,7 +106,7 @@ for ci in range(len(client["clients"])):
         "vlan_list": [
             {
                 "vlan_id": 0,
-                "ipv6": {
+                af: {
                     "address": client["clients"][ci]["ip"],
                     "as_macro": as_macro,
                     "routeserver": routeserver
@@ -115,7 +121,14 @@ for ci in range(len(client["clients"])):
     if asnum not in member_dict:
         member_dict[asnum] = member_item
     else:
-        member_dict[asnum]["connection_list"][0]["vlan_list"] += connection_item["vlan_list"]
+        found_in_vlan_list = False
+        for vlan_item in member_dict[asnum]["connection_list"][0]["vlan_list"]:
+           if af not in vlan_item:
+              vlan_item[af] = connection_item["vlan_list"][0][af]
+              found_in_vlan_list = True
+              break
+        if not found_in_vlan_list: 
+          member_dict[asnum]["connection_list"][0]["vlan_list"] += connection_item["vlan_list"]
 
 member_list.append(list(member_dict.values()))
 
