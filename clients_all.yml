@@ -8,14 +8,6 @@ clients:
         as_sets: [AS-POEMA]
 
 - asn: 140731
-  ip: "23.146.72.196"
-  name: "TOHU Public Internet(v4)"
-  cfg:
-    filtering:
-      irrdb:
-        as_sets: [AS-TOHUNET-TRANSIT-WUS]
-
-- asn: 140731
   ip: "2a0a:280:f000:3::14:0731:0"
   name: "TOHU Public Internet(v6)"
   cfg:
@@ -113,7 +105,7 @@ clients:
 
 - asn: 200105
   ip: "23.146.72.197"
-  name: "MoeQing Network(v4)"
+  name: "MoeQing Network"
   cfg:
     filtering:
       irrdb:
@@ -141,7 +133,7 @@ clients:
 
 - asn: 200105
   ip: "2a0a:280:f000:3::20:105:0"
-  name: "MoeQing Network(v6)"
+  name: "MoeQing Network"
   cfg:
     filtering:
       irrdb:
