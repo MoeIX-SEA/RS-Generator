@@ -71,7 +71,7 @@
         "connection_list": [
           {
             "ixp_id": 0,
-            "state": "active",
+            "state": "inactive",
             "if_list": [
               {
                 "if_speed": 250,
@@ -84,7 +84,7 @@
                 "ipv6": {
                   "address": "2a0a:280:f000:3::20:3472:0",
                   "as_macro": "AS-POEMA",
-                  "routeserver": true
+                  "routeserver": false
                 }
               }
             ]
@@ -96,7 +96,7 @@
         "connection_list": [
           {
             "ixp_id": 0,
-            "state": "active",
+            "state": "inactive",
             "if_list": [
               {
                 "if_speed": 250,
@@ -109,7 +109,7 @@
                 "ipv6": {
                   "address": "2a0a:280:f000:3::14:0731:0",
                   "as_macro": "AS-TOHUNET-TRANSIT-WUS",
-                  "routeserver": true
+                  "routeserver": false
                 }
               }
             ]
@@ -171,7 +171,7 @@
         "connection_list": [
           {
             "ixp_id": 0,
-            "state": "active",
+            "state": "inactive",
             "if_list": [
               {
                 "if_speed": 250,
@@ -184,7 +184,7 @@
                 "ipv6": {
                   "address": "2a0a:280:f000:3::19:9605:0",
                   "as_macro": "AS-JSMSR",
-                  "routeserver": true
+                  "routeserver": false
                 }
               }
             ]
@@ -246,7 +246,7 @@
         "connection_list": [
           {
             "ixp_id": 0,
-            "state": "active",
+            "state": "inactive",
             "if_list": [
               {
                 "if_speed": 250,
@@ -259,7 +259,7 @@
                 "ipv6": {
                   "address": "2a0a:280:f000:3::7721:0",
                   "as_macro": "AS7721:AS-QINCLOUD",
-                  "routeserver": true
+                  "routeserver": false
                 }
               }
             ]
@@ -321,7 +321,7 @@
         "connection_list": [
           {
             "ixp_id": 0,
-            "state": "active",
+            "state": "inactive",
             "if_list": [
               {
                 "if_speed": 250,
@@ -334,7 +334,7 @@
                 "ipv6": {
                   "address": "2a0a:280:f000:3::19:9656:0",
                   "as_macro": "",
-                  "routeserver": true
+                  "routeserver": false
                 }
               }
             ]
@@ -576,7 +576,7 @@
         "connection_list": [
           {
             "ixp_id": 0,
-            "state": "active",
+            "state": "inactive",
             "if_list": [
               {
                 "if_speed": 250,
@@ -589,7 +589,7 @@
                 "ipv6": {
                   "address": "2a0a:280:f000:3::20:8223:0",
                   "as_macro": "AS208223:AS-ALL",
-                  "routeserver": true
+                  "routeserver": false
                 }
               }
             ]
