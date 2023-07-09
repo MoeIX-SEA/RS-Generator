@@ -400,6 +400,12 @@
   - 207705
   - 211390
   asn: 207705
+24:
+  as-set:
+  - AS200455:AS-ALL
+  as-set-flat:
+  - 200455
+  asn: 207705
 all:
   as-set:
   - AS-POEMA
@@ -424,6 +430,7 @@ all:
   - AS208223:AS-ALL
   - AS-NETSYN
   - AS-JKNET
+  - AS200455:AS-ALL
   as-set-flat:
   - 138517
   - 199594
@@ -608,6 +615,7 @@ all:
   - 142282
   - 18041
   - 207705
+  - 200455
   asn:
   - 203472
   - 140731

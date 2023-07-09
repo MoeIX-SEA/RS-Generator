@@ -641,6 +641,14 @@
                   "as_macro": "AS-JKNET",
                   "routeserver": true
                 }
+              },
+              {
+                "vlan_id": 0,
+                "ipv6": {
+                  "address": "2a0a:280:f000:3::20:455:0",
+                  "as_macro": "AS200455:AS-ALL",
+                  "routeserver": true
+                }
               }
             ]
           }
