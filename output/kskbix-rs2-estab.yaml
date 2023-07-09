@@ -244,6 +244,12 @@
   - 203472
   - 204508
   asn: 7721
+8:
+  as-set:
+  - APNIC::AS-RAZU-AP
+  as-set-flat:
+  - 142551
+  asn: 142551
 9:
   as-set:
   - AS-CHIMON
@@ -316,6 +322,7 @@ all:
   - AS-JSMSR
   - AS-ZXINC
   - AS7721:AS-QINCLOUD
+  - APNIC::AS-RAZU-AP
   - AS-CHIMON
   - AS199656
   - AS-MLGT
@@ -499,6 +506,7 @@ all:
   - 199605
   - 139317
   - 7721
+  - 142551
   - 202939
   - 199656
   - 204508
