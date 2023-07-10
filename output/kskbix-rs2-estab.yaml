@@ -307,12 +307,6 @@
   - 207705
   - 211390
   asn: 207705
-24:
-  as-set:
-  - AS200455:AS-ALL
-  as-set-flat:
-  - 200455
-  asn: 207705
 all:
   as-set:
   - AS-TOHUNET-TRANSIT-WUS
@@ -329,7 +323,6 @@ all:
   - AS-BLING
   - AS208223:AS-ALL
   - AS-JKNET
-  - AS200455:AS-ALL
   as-set-flat:
   - 112
   - 25152
@@ -496,7 +489,6 @@ all:
   - 18041
   - 199594
   - 207705
-  - 200455
   asn:
   - 140731
   - 200078

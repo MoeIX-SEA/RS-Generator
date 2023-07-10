@@ -745,12 +745,6 @@
   - 207705
   - 211390
   asn: 207705
-24:
-  as-set:
-  - AS200455:AS-ALL
-  as-set-flat:
-  - 200455
-  asn: 207705
 all:
   as-set:
   - AS-POEMA
@@ -769,7 +763,6 @@ all:
   - AS-BLING
   - AS208223:AS-ALL
   - AS-JKNET
-  - AS200455:AS-ALL
   as-set-flat:
   - 138517
   - 199594
