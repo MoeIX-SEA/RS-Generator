@@ -189,7 +189,7 @@ clients:
       irrdb:
         as_sets:
         - AS-JKNET
-- asn: 207705
+- asn: 200455
   ip: 2a0a:280:f000:3::20:455:0
   cfg:
     filtering:
