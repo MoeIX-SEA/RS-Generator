@@ -269,12 +269,6 @@
   as-set-flat:
   - 202939
   asn: 202939
-10:
-  as-set:
-  - AS199656
-  as-set-flat:
-  - 199656
-  asn: 199656
 11:
   as-set:
   - AS-MLGT
@@ -797,7 +791,6 @@ all:
   - AS7721:AS-QINCLOUD
   - APNIC::AS-RAZU-AP
   - AS-CHIMON
-  - AS199656
   - AS-MLGT
   - AS-MoeQing
   - AS-RADISH
@@ -1043,7 +1036,6 @@ all:
   - 7721
   - 142551
   - 202939
-  - 199656
   - 204508
   - 200105
   - 201217
