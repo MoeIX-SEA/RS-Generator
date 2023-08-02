@@ -751,14 +751,6 @@
   - 399642
   - 400312
   asn: 200105
-15:
-  as-set:
-  - AS-RADISH
-  as-set-flat:
-  - 199613
-  - 199656
-  - 200631
-  asn: 201217
 17:
   as-set:
   - AS-LILY
@@ -810,7 +802,6 @@ all:
   - AS199656
   - AS-MLGT
   - AS-MoeQing
-  - AS-RADISH
   - AS-LILY
   - AS-BLING
   - AS208223:AS-ALL
@@ -1059,7 +1050,6 @@ all:
   - 199656
   - 204508
   - 200105
-  - 201217
   - 203236
   - 199613
   - 208223
