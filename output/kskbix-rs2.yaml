@@ -418,6 +418,11 @@
   as-set-flat:
   - 200455
   asn: 200455
+25:
+  as-set:
+  - AS200754:AS-SHADOWRHYTHM
+  as-set-flat: []
+  asn: 200754
 all:
   as-set:
   - AS-POEMA
@@ -443,6 +448,7 @@ all:
   - AS-NETSYN
   - AS-JKNET
   - AS200455:AS-ALL
+  - AS200754:AS-SHADOWRHYTHM
   as-set-flat:
   - 138517
   - 199594
@@ -669,3 +675,4 @@ all:
   - 200850
   - 207705
   - 200455
+  - 200754
