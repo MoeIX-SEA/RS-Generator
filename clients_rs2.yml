@@ -212,3 +212,10 @@ clients:
       irrdb:
         as_sets:
         - AS200455:AS-ALL
+- asn: 200754
+  ip: 2a0a:280:f000:3::20:754:0
+  cfg:
+    filtering:
+      irrdb:
+        as_sets:
+        - AS200754:AS-SHADOWRHYTHM
