@@ -320,6 +320,12 @@
   as-set-flat:
   - 208223
   asn: 208223
+22:
+  as-set:
+  - AS-NETSYN
+  as-set-flat:
+  - 200850
+  asn: 200850
 23:
   as-set:
   - AS-JKNET
@@ -351,6 +357,7 @@ all:
   - AS-LILY
   - AS-BLING
   - AS208223:AS-ALL
+  - AS-NETSYN
   - AS-JKNET
   - AS200455:AS-ALL
   as-set-flat:
@@ -535,6 +542,7 @@ all:
   - 213262
   - 197815
   - 200949
+  - 200850
   - 18041
   - 199594
   - 207705
@@ -554,5 +562,6 @@ all:
   - 203236
   - 199613
   - 208223
+  - 200850
   - 207705
   - 200455
