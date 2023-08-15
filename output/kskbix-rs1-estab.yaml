@@ -295,14 +295,6 @@
   as-set-flat:
   - 199656
   asn: 199656
-11:
-  as-set:
-  - AS-MLGT
-  as-set-flat:
-  - 203323
-  - 204508
-  - 211604
-  asn: 204508
 13:
   as-set:
   - AS-MoeQing
@@ -854,7 +846,6 @@ all:
   - APNIC::AS-RAZU-AP
   - AS-CHIMON
   - AS199656
-  - AS-MLGT
   - AS-MoeQing
   - AS-RADISH
   - AS-LILY
@@ -1116,7 +1107,6 @@ all:
   - 142551
   - 202939
   - 199656
-  - 204508
   - 200105
   - 201217
   - 203236

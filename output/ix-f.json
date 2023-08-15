@@ -346,7 +346,7 @@
         "connection_list": [
           {
             "ixp_id": 0,
-            "state": "active",
+            "state": "inactive",
             "if_list": [
               {
                 "if_speed": 250,
@@ -359,7 +359,7 @@
                 "ipv6": {
                   "address": "2a0a:280:f000:3::20:4508:0",
                   "as_macro": "AS-MLGT",
-                  "routeserver": true
+                  "routeserver": false
                 }
               }
             ]
